@@ -1,0 +1,141 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+$bgColorPrimary: #db6b6b;
+$bgColorSecondary: #e5e5e5;
+$textColorPrimary: #121314;
+$textColorSecondary: #262626;
+
+@import "mixin";
+
+body {
+  max-width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  font-family: "Advent Pro", sans-serif;
+  font-size: calc(1.8rem + 0.33vw);
+  font-weight: 400;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  background-color: $bgColorSecondary;
+  width: 100%;
+  max-width: 64rem;
+  height: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr 1.2fr;
+}
+
+.section-top {
+  padding: 4rem 6rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img,
+    svg {
+      width: 2rem;
+      color: $bgColorPrimary;
+      cursor: pointer;
+    }
+  }
+
+
+  h1 {
+    font-size: calc(2rem + 0.33vw);
+    font-weight: 700;
+
+    svg {
+      width: 1.5rem;
+      color: initial;
+      cursor: initial;
+    }
+  }
+
+  .result-unit {
+    text-align: initial;
+
+    svg {
+      width: 2rem;
+      color: $textColorSecondary;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-weight: 700;
+      writing-mode: vertical-rl;
+      transform: scaleX(-1) scaleY(-1);
+    }
+  }
+
+  .result {
+    font-size: calc(9rem + 0.33vw);
+    font-weight: 700;
+    text-align: right;
+    background-image: linear-gradient(to right, #3c3c3c, $textColorSecondary);
+    background-size: 50%;
+    background-position: left;
+    background-clip: text;
+    color: transparent;
+    transition: background-position 300ms ease-in-out;
+
+    &:hover {
+      background-position: right;
+    }
+  }
+}
+
+.section-bottom {
+  background-image: linear-gradient(35deg, #ffb6c1 20%, $bgColorPrimary);
+  border-radius: 40px 40px 0 0;
+  padding: 4rem 6rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  button {
+    cursor: pointer;
+    width: min(80%, 85%, 90%);
+    font-family: "Advent Pro", sans-serif;
+    font-size: inherit;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 0;
+    border-radius: 30px;
+    padding: 2rem 3rem;
+    background-color: $textColorPrimary;
+    color: #ffb6c1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    svg {
+      width: 1.5rem;
+    }
+  }
+}
